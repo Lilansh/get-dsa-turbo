@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b136cc67167fe4f9ec2da018f4060d, type: 3}
   m_Name: TestCard02
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  frontSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   backSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cardID: 0
+  cardID: 2
   cardName: 
   cardColor: {r: 1, g: 1, b: 1, a: 1}
   isMatched: 0

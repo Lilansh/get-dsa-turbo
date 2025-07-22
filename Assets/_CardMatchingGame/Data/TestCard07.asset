@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   backSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cardID: 0
+  cardID: 7
   cardName: 
   cardColor: {r: 1, g: 1, b: 1, a: 1}
   isMatched: 0
