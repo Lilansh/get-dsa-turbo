@@ -29,6 +29,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
         {
             cardImage.sprite = cardData.backSprite;
             cardImage.color = cardData.cardColor;
+            cardData.isFlipped = false;
         }
     }
 
@@ -53,12 +54,11 @@ public class Card : MonoBehaviour, IPointerClickHandler
         isFlipping = true;
         isClickable = false;
 
-        // Flip to front
-        yield return StartCoroutine(FlipToSprite(cardData.frontSprite));
+        // Flip to front
+        yield return StartCoroutine(FlipToSprite(cardData.frontSprite));
 
         cardData.isFlipped = true;
 
-        // Re-enable clicking after flip
         isClickable = true;
         isFlipping = false;
     }
@@ -84,24 +84,24 @@ public class Card : MonoBehaviour, IPointerClickHandler
         float elapsedTime = 0;
         Vector3 originalScale = transform.localScale;
 
-        // Scale down (flip effect)
-        while (elapsedTime < flipDuration / 2)
+        // Shrink X to zero over flipDuration/2
+        while (elapsedTime < flipDuration / 2f)
         {
             elapsedTime += Time.deltaTime;
-            float progress = flipCurve.Evaluate(elapsedTime / (flipDuration / 2));
+            float progress = flipCurve.Evaluate(elapsedTime / (flipDuration / 2f));
             transform.localScale = new Vector3(originalScale.x * (1 - progress), originalScale.y, originalScale.z);
             yield return null;
         }
 
-        // Change sprite at halfway point
-        cardImage.sprite = targetSprite;
+        // Change sprite halfway
+        cardImage.sprite = targetSprite;
 
-        // Scale back up
-        elapsedTime = 0;
-        while (elapsedTime < flipDuration / 2)
+        // Expand back out
+        elapsedTime = 0;
+        while (elapsedTime < flipDuration / 2f)
         {
             elapsedTime += Time.deltaTime;
-            float progress = flipCurve.Evaluate(elapsedTime / (flipDuration / 2));
+            float progress = flipCurve.Evaluate(elapsedTime / (flipDuration / 2f));
             transform.localScale = new Vector3(originalScale.x * progress, originalScale.y, originalScale.z);
             yield return null;
         }
@@ -109,11 +109,31 @@ public class Card : MonoBehaviour, IPointerClickHandler
         transform.localScale = originalScale;
     }
 
+    /// <summary>
+    /// Call this from GameManager to flash face at start.
+    /// </summary>
+    public IEnumerator FlashCardFace(float delay)
+    {
+        isClickable = false;
+
+        // Flip to front
+        yield return StartCoroutine(FlipToSprite(cardData.frontSprite));
+        cardData.isFlipped = true;
+
+        // Wait (card stays revealed for a moment)
+        yield return new WaitForSeconds(delay);
+
+        // Flip back
+        yield return StartCoroutine(FlipToSprite(cardData.backSprite));
+        cardData.isFlipped = false;
+
+        isClickable = true;
+    }
+
     public void SetMatched()
     {
         cardData.isMatched = true;
         isClickable = false;
-        // Add visual feedback for matched state
         cardImage.color = Color.gray;
     }
 }

@@ -46,12 +46,37 @@ public class GameManager : MonoBehaviour
         ConfigureGrid();
         CreateCards();
         ShuffleCards();
-        gameActive = true;
+
+        // Freeze UI/input
+        gameActive = false;
         score = 0;
         gameTime = 0;
 
+        // Flash all card faces
+        StartCoroutine(StartFlipPreview());
+
         AudioManager.Instance?.PlaySound("GameStart");
     }
+
+    private IEnumerator StartFlipPreview()
+    {
+        yield return new WaitForSeconds(0.5f); // Slight delay before flipping begins
+
+        List<Coroutine> flipCoroutines = new List<Coroutine>();
+
+        foreach (Card card in allCards)
+        {
+            Coroutine flash = StartCoroutine(card.FlashCardFace(revealTime));
+            flipCoroutines.Add(flash);
+        }
+
+        // Wait for all cards to flip back before activating game
+        yield return new WaitForSeconds(revealTime + 0.4f); // total flash duration = one reveal cycle
+
+        gameActive = true;
+    }
+
+
 
     void ConfigureGrid()
     {
@@ -193,4 +218,6 @@ public class GameManager : MonoBehaviour
         allCards.Clear();
         flippedCards.Clear();
     }
+
+
 }
