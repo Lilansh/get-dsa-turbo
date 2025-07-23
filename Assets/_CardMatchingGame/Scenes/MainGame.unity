@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -764, y: 452}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -685.59235, y: 431.14783}
+  m_SizeDelta: {x: 316.8155, y: 71.7043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &246263258
 CanvasRenderer:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -190,13 +190,13 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 55
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -437,7 +437,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.06127626, g: 0.4811321, b: 0.46283746, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -664,8 +664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b545375eee399c449272f03bb702917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 4
-  gridHeight: 4
+  gridWidth: 2
+  gridHeight: 2
   revealTime: 1
   cardParent: {fileID: 273941996}
   cardPrefab: {fileID: 8868091912384474854, guid: a2788f4f421708f4bbb908a66621f9a4, type: 3}
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -736,13 +736,13 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 55
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -773,8 +773,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 730, y: 452}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 764, y: 432.5626}
+  m_SizeDelta: {x: 387.0698, y: 68.8747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1715292706
 GameObject:
@@ -901,7 +901,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5bab2919a82b3ba469660b17b23789c8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1001,7 +1001,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1715292708}
   sfxSource: {fileID: 1715292707}
-  soundClips: []
+  soundClips:
+  - name: CardFlip
+    clip: {fileID: 8300000, guid: b43aa113d24952f479997211e80bb60c, type: 3}
+    volume: 1
+  - name: Match
+    clip: {fileID: 8300000, guid: 201f42e41abe1f347bbffca26e81906d, type: 3}
+    volume: 1
+  - name: Mismatch
+    clip: {fileID: 8300000, guid: f05762e267624e647a149accd7abec42, type: 3}
+    volume: 1
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 85ef8c0de83a649489417e3ff3d86063, type: 3}
+    volume: 1
 --- !u!4 &1715292710
 Transform:
   m_ObjectHideFlags: 0

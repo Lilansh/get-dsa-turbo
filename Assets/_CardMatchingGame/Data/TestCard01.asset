@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b136cc67167fe4f9ec2da018f4060d, type: 3}
   m_Name: TestCard01
   m_EditorClassIdentifier: 
-  frontSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  backSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  frontSprite: {fileID: 21300000, guid: 4931c0fa524b040c9a825664bafb0774, type: 3}
+  backSprite: {fileID: 21300000, guid: 47d55a0a093944c498024cd288893d02, type: 3}
   cardID: 1
   cardName: 
   cardColor: {r: 1, g: 1, b: 1, a: 1}
