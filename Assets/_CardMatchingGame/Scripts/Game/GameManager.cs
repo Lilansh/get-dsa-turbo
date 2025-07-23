@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,8 +27,14 @@ public class GameManager : MonoBehaviour
     private float gameTime = 0;
     private bool gameActive = false;
 
+    public GameObject GameOverUI;
+
+    public Text EndScoreText;
+    public Text EndTimeText;
+
     void Start()
     {
+        GameOverUI.SetActive(false);
         LevelData level = GameSession.Instance.selectedLevel;
 
         if (level != null)
@@ -208,9 +215,13 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance?.PlaySound("GameOver");
             SaveLoadManager.Instance?.SaveScore(score, gameTime);
             // Show win UI
+            GameOverUI.SetActive(true);
+            EndScoreText.text = "Final Score: " + score;
+            EndTimeText.text = "Time Taken: " + gameTime.ToString("F1") + "s";
+            SaveBestScore();
         }
 
-        SaveBestScore();
+
     }
 
     void UpdateUI()
@@ -241,5 +252,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+
+    public void ReturntoMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        GameSession.Instance.selectedLevel = null;
+    }
 
 }
