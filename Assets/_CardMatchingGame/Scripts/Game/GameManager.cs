@@ -28,6 +28,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        LevelData level = GameSession.Instance.selectedLevel;
+
+        if (level != null)
+        {
+            gridWidth = level.gridWidth;
+            gridHeight = level.gridHeight;
+        }
+
         InitializeGame();
     }
 
@@ -201,6 +209,8 @@ public class GameManager : MonoBehaviour
             SaveLoadManager.Instance?.SaveScore(score, gameTime);
             // Show win UI
         }
+
+        SaveBestScore();
     }
 
     void UpdateUI()
@@ -217,6 +227,18 @@ public class GameManager : MonoBehaviour
         }
         allCards.Clear();
         flippedCards.Clear();
+    }
+    private void SaveBestScore()
+    {
+        string id = GameSession.Instance.selectedLevel.levelID;
+
+        if (score > PlayerPrefs.GetInt("BestScore_" + id, 0))
+            PlayerPrefs.SetInt("BestScore_" + id, score);
+
+        if (gameTime < PlayerPrefs.GetFloat("BestTime_" + id, float.MaxValue))
+            PlayerPrefs.SetFloat("BestTime_" + id, gameTime);
+
+        PlayerPrefs.Save();
     }
 
 
