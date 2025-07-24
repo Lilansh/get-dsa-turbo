@@ -155,10 +155,10 @@ RectTransform:
   m_Father: {fileID: 501144399}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 728, y: 431.14783}
-  m_SizeDelta: {x: 316.8155, y: 71.7043}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -211.44, y: -116.85217}
+  m_SizeDelta: {x: 387.93994, y: 71.704285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &246263258
 CanvasRenderer:
@@ -752,10 +752,10 @@ RectTransform:
   m_Father: {fileID: 501144399}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -802, y: 466}
-  m_SizeDelta: {x: 160, y: 60}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 171.1825, y: -87.80939}
+  m_SizeDelta: {x: 156.36499, y: 71.618774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751204074
 MonoBehaviour:
@@ -968,6 +968,7 @@ MonoBehaviour:
   gridLayout: {fileID: 273941995}
   scoreText: {fileID: 246263259}
   timeText: {fileID: 1029983056}
+  comboText: {fileID: 0}
   availableCards:
   - {fileID: 11400000, guid: d11e9b067a251af47a61faf4d0f6f3f2, type: 2}
   - {fileID: 11400000, guid: aa2222571c61bec47ab67ac4a01d320c, type: 2}
@@ -1205,10 +1206,10 @@ RectTransform:
   m_Father: {fileID: 501144399}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 764, y: 335}
-  m_SizeDelta: {x: 387.0698, y: 68.8747}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -211, y: -213}
+  m_SizeDelta: {x: 387.06982, y: 68.874695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1206931761
 GameObject:
@@ -1744,8 +1745,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1762,8 +1763,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 37.7
+  m_fontSizeBase: 37.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
